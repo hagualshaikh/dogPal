@@ -5,25 +5,32 @@
 
 .whiteLink {
   color: white;
+  
 }
 
 body {
   background-color: #ECEFF1;
 }
+#mycontainter{
+  height: 90%;
+}
 
 .lowLight {
   background-color: white;
+}
+#mymenu  ul li {
+  display: inline-block;
+  background-color:transparent;
 }
 
 .my-nav {
   position: relative;
   top: 10px;
-  width: 100%;
+  width: 90%;
   z-index: 1;
-  background: none;
   border: none;
-  border-radius: 0;
-  text-align: justify;
+  border-radius: 1;
+  
 }
 
 /*for full screen landing page*/
@@ -62,6 +69,7 @@ html, body {
 }
 
 .wrapper {
+  top: -90px;
   position: relative;
   width: 100%;
   height: 95%;
@@ -118,6 +126,7 @@ lightGrey {
 }
 
 .centered {
+  margin-top: -50px;
   text-align: center;
 }
 

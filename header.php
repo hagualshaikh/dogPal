@@ -1,53 +1,193 @@
+  
 
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl" lang="nl">
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="A short description." />
+    <meta name="keywords" content="put, keywords, here" />
+    <title>PHP-MySQL dogpale</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+<style>body {
+    background-color: #00e6e6;
+    text-align: center;         /* make sure IE centers the page too */
+}
+ 
+#wrapper {
+    width: 70%;
+    margin: 0 auto; 
+    height:20px; 
+    
+    display :inline-block;
+     
+            /* center the page */
+}
+ 
+#content {
+    background-color: #fff;
+    border: 1px solid rgb(76, 240, 240);
+    float: left;
+    font-family: Arial;
+    padding: 20px 30px;
+    text-align: left;
+    width: 100%;                /* fill up the entire div */
+}
+ 
+#menu {
+    float: left;
+    border: 1px solid black;
+    border-bottom: none;        /* avoid a double border */
+    clear: both;                /* clear:both makes sure the content div doesn't float next to this one but stays under it */
+    width:100%;
+    height:20px;
+    padding: 0 30px;
+    background-color: #FFF;
+    text-align: left;
+    font-size: 85%;
+}
+ 
+#menu a:hover {
+    background-color: #009FC1;
+}
+ 
+#userbar {
+    background-color: #fff;
+    float: right;
+    width: 250px;
+}
+ 
+#footer {
+    clear: both;
+}
+ 
+/* begin table styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+ 
+table a {
+    color: white;
+}
+ 
+table a:hover {
+    color: #00728B;
+    text-decoration: none;
+}
+ 
+th {
+    background-color: #B40E1F;
+    color: #F0F0F0;
+}
+ 
+td {
+    padding: 5px;
+}
+ 
+/* Begin font styles */
+h1, #footer {
+    font-family: Arial;
+    color: #F1F3F1;
+}
+ 
+h3 {margin: 0; padding: 0;}
+ 
+/* Menu styles */
+.item {
+    background-color: #00728B;
+    border: 1px solid #032472;
+    color: #FFF;
+    font-family: Arial;
+    padding: 3px;
+    text-decoration: none;
+}
+ 
+.leftpart {
+    width: 70%;
+}
+ 
+.rightpart {
+    width: 30%;
+}
+ 
+.small {
+    font-size: 75%;
+    color: #373737;
+}
+#footer {
+    font-size: 65%;
+    padding: 3px 0 0 0;
+}
+ 
+.topic-post {
+    height: 100px;
+    overflow: auto;
+}
+ 
+.post-content {
+    padding: 30px;
+}
+ 
+textarea {
+    width: 500px;
+    height: 200px;
+}
+#signout{
+    color:white;
+}
+</style>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <title>dogpal.fr</title>
 </head>
-
 <body>
-  <!-- Barre de menus et navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">DogPal</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.php">Acceuil<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="team.php">Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="prix.php">Tarifs</a>
-        </li>
-      </ul>
+    
+
+<h1>dogpal.com</h1>
+    <div id="wrapper">
+    <div id="menu">
+        <a class="item" href="index.php">Accueil</a> -
+        <a class="item" href="create_topic.php">Create  commentaire</a> -
+
+        <!-- la ou on peux mttre notre pahe c -->
+        <a class="item" href="create_cat.php">category</a>  
+        
+         
+        <div id="userbar">
+      <div id="userbar">
+<?php
+    session_start();
+    if(isset($_SESSION['signed_in']))
+    {
+        echo 'Hello' . $_SESSION['user_name'] . '. Not you? <a href="signout.php">Sign out</a>';
+    }
+    else
+    {
+        echo '<a href="signin.php">Sign in</a> or <a href="signup.php">create an account</a>.';
+    }
+?>
+</div>
     </div>
+        <div id="content">
+              
+<div id="wrapper">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum asperiores aut hic explicabo libero cumque molestiae, neque saepe et quasi deleniti laboriosam perferendis aperiam atque architecto voluptate nihil sit quaerat.
+      </div><!-- content -->
+</div><!-- wrapper -->
+<form method="post" action="reply.php?id=5">
+<textarea name="reply-content"></textarea >
+<input type="submit" value="Submit reply "id ="subm" />
+</form>
+<script>
+    var sub = document.getElementById('subm').value;
+    sub.onclick =function(){
+        document.getElementById('subm').this = innerHTML;
+    }
+</script>
+</body>
 
-    <div class="header-login">
-      <?php
-        if (isset($_SESSION["loggedin"])){
-          $usuName = htmlspecialchars($_SESSION["username"]);
-          echo '<div>Bonjour '.$usuName.'<form action="logout.php" method="post">
-              <button type="submit" name="logout-submit">Logout</button>
-            </form></div>';
-
-        }else {
-          echo '<a href="login.php">Connexion</a> ou <a href="register.php">Inscription</a>';
-        }
-       ?>
+<div id="footer">Created for Nettuts+</div>
 
 
-    </div>
-  </nav>
+
+
+</html>
