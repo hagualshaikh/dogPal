@@ -1,3 +1,8 @@
+<?php
+// Initialize the session
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -15,26 +20,10 @@
 
 <body>
   <!-- Barre de navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">DogPal</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Acceuil<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="team.html">Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="prix.html">Tarifs</a>
-          <a class="nav-link" href="index.php">contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <?php
+    require "header.php";
+   ?>
+
 
 
 
